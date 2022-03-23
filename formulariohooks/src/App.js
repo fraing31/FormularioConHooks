@@ -67,10 +67,10 @@ function App() {
               Confirmar Password :
             </label>
             <input type="password" id="confirmUser"  value={confirm} onChange={(event) => setConfirm(event.target.value)}/>
-            {(password.length < 2 )? (<small>El password debe ser mayor a dos caracteres</small>)
+            {(password.length < 2 &&
+              password !== confirm )? (<small>El password debe ser mayor a dos caracteres y debe ser el mismo colocado en la parte superior</small>)
             :(password !== confirm )? (<small>El password debe ser el mismo colocado en la parte superior</small>)
-            :(password.length < 2 &&
-              password !== confirm )? (<small>El password debe ser mayor a dos caracteres y debe ser el mismo colocado en la parte superior</small>): ""}
+            :(password.length < 2 )? (<small>El password debe ser mayor a dos caracteres</small>): ""}
           </div>
           
         </form>
